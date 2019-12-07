@@ -1,0 +1,26 @@
+#1
+def anagram(s1, s2):
+    ns1 = s1.replace(" ", "")
+    ns2 = s2.replace(" ", "")
+    if len(ns1) != len(ns2):
+        return False
+    char_set = [0] * 256
+    for i in range(0, len(ns1)):
+        var = ord(ns1[i])
+        char_set[var] += 1
+    for i in range(0, len(ns2)):
+        var = ord(ns2[i])
+        char_set[var] -= 1
+    for i in range(0, len(char_set)):
+        if char_set[i] != 0:
+            return False
+    return True
+
+#2
+from collections import Counter
+
+def anagrams(s1, s2):
+    def get_counter(s):
+        return Counter(s.replace(" ", "").lower())
+
+    return get_counter(s1) == get_counter(s2)

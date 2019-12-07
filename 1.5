@@ -1,0 +1,11 @@
+#1
+def Replace(s):
+    n_s = s.replace(' ', '%20')
+    return n_s
+    
+    
+#2
+import re
+def urlfying (s):
+    x = re.sub("\s", "%20", s)
+    print(x)

@@ -1,0 +1,5 @@
+def isRotation(s1, s2):
+    if len(s1) == len(s2):
+        ns1 = s1 + s1
+        return True if s2 in ns1 else False
+    return False

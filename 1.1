@@ -1,0 +1,10 @@
+def isUnique(str):
+    if len(str)> 256:
+        return False
+    char_set = [False] * 256
+    for i in range(0, len(str)):
+        var = ord(str[i])
+        if char_set[var]:
+            return False
+        char_set[var] = True
+    return True

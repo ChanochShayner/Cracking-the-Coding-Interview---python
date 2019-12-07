@@ -1,0 +1,15 @@
+def rotate(m): 
+    N = len(m[0]) 
+    for i in range(N // 2): 
+        for j in range(i, N - i - 1): 
+            temp = m[i][j] 
+            m[i][j] = m[N - 1 - j][i] 
+            m[N - 1 - j][i] = m[N - 1 - i][N - 1 - j] 
+            m[N - 1 - i][N - 1 - j] = m[j][N - 1 - i] 
+            m[j][N - 1 - i] = temp
+            
+            
+def printMatrix(m): 
+    N = len(m[0]) 
+    for i in range(N): 
+        print(m[i]) 

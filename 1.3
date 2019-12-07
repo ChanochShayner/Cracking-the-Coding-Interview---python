@@ -1,0 +1,9 @@
+def removeDuplicates(sr):
+    n_sr = ''
+    char_set = [False] * 256
+    for i in range(0, len(sr)):
+        var = ord(sr[i])
+        if char_set[var] == False:
+            n_sr += sr[i]
+            char_set[var] = True
+    return n_sr

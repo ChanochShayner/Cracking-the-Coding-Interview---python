@@ -1,0 +1,27 @@
+#Delete Middle Node
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+        return new_node
+
+    def printList(self):
+        current = self.head
+        while current:
+            print(current.data)
+            current = current.next
+
+    def DeleteMiddleNode(self, nNode):
+        if nNode.next:
+            nNode.data = nNode.next.data
+            nNode.next = nNode.next.next

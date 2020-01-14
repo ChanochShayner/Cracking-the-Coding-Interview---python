@@ -1,0 +1,28 @@
+#meeting point circular linked list
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+        return new_node
+
+    def meeting_point(self):
+        first = self.head.next
+        second = self.head.next.next
+        while first != second:
+            first = first.next
+            second = second.next.next
+        first = self.head
+        while first != second:
+            first = first.next
+            second = second.next
+        return first
